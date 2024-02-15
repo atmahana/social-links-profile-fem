@@ -1,0 +1,58 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Link from "../components/Link.astro";
+import '../style.css'
+---
+
+<Layout title="Zubair Adham | Social Links">
+  <div
+    id="cursor-gradient"
+    class="absolute z-10 inset-0 transition-all duration-150 ease-[cubic-bezier(0,0.55,0.45,1)]"
+  >
+  </div>
+  <main
+    class="bg-neutral-800/30 text-white p-6 md:p-11 rounded-xl w-full max-w-[24.5rem] flex items-center text-center flex-col gap-5 z-20"
+  >
+    <div class="rounded-full overflow-hidden w-[5.5rem] md:w-28">
+      <img src="/avatar.png" alt="Avatar" />
+    </div>
+    <div class="grid gap-5">
+      <div class="grid gap-1">
+        <h1 class="text-2xl font-semibold">Zubair Adham</h1>
+        <h2 class="text-lg font-medium text-sky-200">Selangor, Malaysia</h2>
+      </div>
+      <p class="font-mono text-sm">"Man I love CSS"</p>
+    </div>
+    <div class="w-full">
+      <ul class="wrapper grid gap-4 md:gap-5">
+        <Link name="GitHub" href="https://github.com/atmahana" />
+        <Link
+          name="LinkedIn"
+          href="https://www.linkedin.com/in/zubair-adham/"
+        />
+        <Link
+          name="Frontend Mentor"
+          href="https://www.frontendmentor.io/profile/atmahana"
+        />
+        <Link name="CodePen" href="https://codepen.io/atmahana" />
+      </ul>
+    </div>
+  </main>
+</Layout>
+
+<script>
+  const gradient = document.querySelector("#cursor-gradient") as HTMLDivElement;
+
+  function updateMouseCoords(event: MouseEvent) {
+    let mouseX;
+    let mouseY;
+
+    setTimeout(() => {
+      mouseX = event.clientX;
+      mouseY = event.clientY;
+      gradient.style.background = `radial-gradient(500px at ${mouseX}px ${mouseY}px,rgba(29, 78, 216, 0.15),transparent 70%)`;
+    }, 150);
+  }
+
+  document.addEventListener("mousemove", updateMouseCoords);
+</script>

@@ -1,0 +1,3 @@
+.wrapper:hover .item:not(:hover) {
+  opacity: 0.25;
+}

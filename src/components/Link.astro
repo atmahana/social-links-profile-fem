@@ -1,0 +1,12 @@
+---
+interface Props {
+  name: string;
+  href: string;
+}
+
+const { name, href } = Astro.props;
+---
+
+<li class="w-full" aria-label={`${name} Link`}>
+  <a href={href} class="item block bg-neutral-700 hover:bg-sky-200 hover:text-neutral-900 py-2.5 rounded-md font-medium w-full transition-all duration-200">{name}</a>
+</li>
